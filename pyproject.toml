@@ -1,0 +1,33 @@
+[project]
+name = "latency-probe"
+version = "1.0.0"
+description = "Turn-detection latency probe for AssemblyAI streaming STT"
+requires-python = ">=3.10, <3.15"
+
+dependencies = [
+    "livekit-agents~=1.8",
+    "aiohttp",
+    "sounddevice",
+    "python-dotenv",
+]
+
+[tool.uv]
+# The probe is a single script with a vendored `assemblyai_stt` package next to
+# it. uv manages the environment and the dependencies, but does not build this
+# repo as a package.
+package = false
+# yarl 1.24.1 was published with only a cp310 wheel and no sdist, so it can't
+# install on Python 3.11+. Remove this once upstream uploads the remaining wheels.
+constraint-dependencies = ["yarl<1.24"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "B", "A", "C4", "UP", "SIM", "RUF"]
+ignore = ["E501"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"

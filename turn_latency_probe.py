@@ -24,10 +24,10 @@ the model, not the settings. Override the config with the flags if you want.
 
 Usage
 -----
-    uv run latency_probe/turn_latency_probe.py
-    uv run latency_probe/turn_latency_probe.py --list-devices
-    uv run latency_probe/turn_latency_probe.py --max-turn-silence 1000
-    uv run latency_probe/turn_latency_probe.py --models universal-3-6-pro universal-3-7-preview
+    uv run turn_latency_probe.py
+    uv run turn_latency_probe.py --list-devices
+    uv run turn_latency_probe.py --max-turn-silence 1000
+    uv run turn_latency_probe.py --models universal-3-6-pro universal-3-7-preview
 
 Speak a few complete sentences, pausing between them. Each pause that the model
 treats as end of turn prints one line per model. Press Ctrl+C to stop and print
@@ -53,10 +53,11 @@ from livekit.agents import stt as stt_base
 
 import assemblyai_stt
 
-# The project's agent reads its key from .env.local in the project root. This
-# script lives one level down, so load the same file by its absolute path.
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
-load_dotenv(PROJECT_ROOT / ".env.local")
+# Read ASSEMBLYAI_API_KEY from .env.local next to this script. Copy .env.example
+# to .env.local and fill in your key. Load the file by its absolute path so the
+# probe works from any working directory.
+PROBE_DIR = Path(__file__).resolve().parent
+load_dotenv(PROBE_DIR / ".env.local")
 
 # AssemblyAI streaming wants 16 kHz mono 16-bit PCM. The plugin rebuffers into
 # its own 50 ms frames, so the capture block size below only affects how often

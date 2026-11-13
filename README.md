@@ -31,17 +31,45 @@ is the model, not the settings.
 
 A naive probe starts the clock when the final transcript arrives. That drops the
 transcription delay and makes every model look near-instant. The last-word anchor
-is the fix. It is the same anchor the production agent uses. See the comments in
-`src/agent.py` and the `END_OF_SPEECH` block in `src/assemblyai_stt/stt.py`.
+is the fix. It is the same anchor the production agent uses. See the
+`END_OF_SPEECH` block in `assemblyai_stt/stt.py`.
+
+## What is in this repo
+
+The probe is self-contained, so you can clone it and run it on its own:
+
+- `turn_latency_probe.py` — the probe.
+- `assemblyai_stt/` — a vendored copy of the project's AssemblyAI streaming STT
+  plugin. It adds the `universal-3-7-preview` model and its Pro options, which
+  the published `livekit-plugins-assemblyai` does not expose. The probe imports
+  this local copy, not the published plugin.
+- `pyproject.toml` — the dependencies, managed by [uv](https://docs.astral.sh/uv/).
 
 ## Run it
 
-The probe reads `ASSEMBLYAI_API_KEY` from `.env.local` in the project root, the
-same file the agent uses. Run it from the project root:
+You need [uv](https://docs.astral.sh/uv/) and an AssemblyAI API key.
 
-```console
-uv run latency_probe/turn_latency_probe.py
-```
+1. Clone the repo and enter it:
+
+   ```console
+   git clone git@github.com:tom-aai/latency_probe.git
+   cd latency_probe
+   ```
+
+2. Add your key. Copy the example file and fill in `ASSEMBLYAI_API_KEY`:
+
+   ```console
+   cp .env.example .env.local
+   ```
+
+   Get a key at <https://www.assemblyai.com/app/account>. The `.env.local` file
+   is git-ignored, so your key stays out of the repo.
+
+3. Run the probe. uv installs the dependencies on the first run:
+
+   ```console
+   uv run turn_latency_probe.py
+   ```
 
 Speak a few complete sentences. Pause between them. Each pause that a model
 treats as end of turn prints one line per model. Press Ctrl+C to stop and print
