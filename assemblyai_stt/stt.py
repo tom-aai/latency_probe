@@ -26,6 +26,7 @@ from typing import Any, Literal
 from urllib.parse import urlencode
 
 import aiohttp
+from livekit import rtc
 from livekit.agents import (
     DEFAULT_API_CONNECT_OPTIONS,
     APIConnectionError,
@@ -594,6 +595,13 @@ class SpeechStream(stt.SpeechStream):
         self._session_id: str | None = None
         self._expires_at: int | None = None
         self._last_frame_sent_at: float | None = None
+        # Wall-clock when the first audio frame entered the plugin, i.e. its
+        # capture time. Stamped in push_frame. send_task uses it to anchor
+        # self.start_time to capture time instead of first-send time, so audio
+        # that queues while the WebSocket connects stays out of the measured
+        # turn latency.
+        self._first_frame_captured_at: float | None = None
+        self._ever_anchored: bool = False
 
     @property
     def session_id(self) -> str | None:
@@ -607,6 +615,21 @@ class SpeechStream(stt.SpeechStream):
         """Unix timestamp when the AssemblyAI session expires. Set alongside session_id
         when the WebSocket connection is established."""
         return self._expires_at
+
+    def push_frame(self, frame: rtc.AudioFrame) -> None:
+        # Stamp the capture time of the first frame as it enters the plugin.
+        # push_frame runs when the audio is captured, which can be before the
+        # WebSocket has finished connecting. Frames pushed during that connect
+        # window queue in _input_ch, so the first frame is forwarded to the
+        # server later than it was captured. The server counts its word
+        # timestamps from the first audio sample it receives (this first frame),
+        # so anchoring start_time at first-send time (see send_task) puts it
+        # past the server's zero by the connect/backlog delay and makes every
+        # turn-latency reading short by that amount. Stamping here keeps the
+        # anchor at capture time regardless of socket state.
+        if self._first_frame_captured_at is None:
+            self._first_frame_captured_at = time.time()
+        super().push_frame(frame)
 
     def update_options(
         self,
@@ -733,11 +756,24 @@ class SpeechStream(stt.SpeechStream):
 
                     for frame in frames:
                         if not anchored:
-                            # Anchor the stream's wall-clock to the moment just
-                            # before the first frame is sent — aligned with the
-                            # server's stream-relative zero used by
-                            # SpeechStarted.timestamp.
-                            self.start_time = time.time()
+                            # Anchor the stream's wall-clock to when the first
+                            # frame was CAPTURED (stamped in push_frame), not to
+                            # now (first send). The server's stream-relative zero
+                            # is the first audio sample it receives, which is this
+                            # first frame; audio that queued while the socket was
+                            # connecting would otherwise push start_time past that
+                            # zero and make every turn-latency reading short by
+                            # the connect delay. On a reconnect the stamped time
+                            # belongs to the original session, so fall back to now
+                            # (the previous behavior) for correctness.
+                            if (
+                                not self._ever_anchored
+                                and self._first_frame_captured_at is not None
+                            ):
+                                self.start_time = self._first_frame_captured_at
+                            else:
+                                self.start_time = time.time()
+                            self._ever_anchored = True
                             anchored = True
                         self._speech_duration += frame.duration
                         await ws.send_bytes(frame.data.tobytes())
