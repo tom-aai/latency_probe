@@ -1,0 +1,207 @@
+tom@Toms-MacBook-Pro latency_probe % uv run turn_latency_probe.py 
+Turn-detection latency probe
+  models: universal-3-6-pro, universal-3-7-preview
+  turn silence: min_turn_silence=100ms, max_turn_silence=1000ms (shared by all models)
+  sample rate: 16000 Hz
+
+Speak now. Pause between sentences. Press Ctrl+C to stop.
+
+10:26:39  universal-3-7-preview  turn  1  detect    34.2 ms  "We're holding back."
+10:26:51  universal-3-7-preview  turn  2  detect   152.5 ms  "from releasing a product when it's ready. So yeah, just keep me in the loop on Duplex and if we feel like it, there's a chance that that date gets brought forward."
+10:26:52  universal-3-6-pro      turn  1  detect   243.5 ms  "we're holding back from releasing a product when it's ready. So yeah, just keep me in the loop on Duplex and if we feel like it— there's a chance that that date gets brought forward."
+10:27:07  universal-3-7-preview  turn  3  detect    54.2 ms  "But there's also, I think, a lot that I want to understand around like how we're planning to position Duplex against or not against alongside our other models and everything. So I think we can continue to have those conversations, but just wanted to flag all that."
+10:27:08  universal-3-6-pro      turn  2  detect   480.3 ms  "But there's also, I think, a lot that I want to understand around like how we're planning to position Duplex against or not against alongside our other models and everything. So I think we can continue to have those conversations, but just wanted to flag all of that."
+10:27:15  universal-3-6-pro      turn  3  detect   131.2 ms  "Sounds good. A lot of the things will be cleared up in December when we have our first full build version of it."
+10:27:19  universal-3-6-pro      turn  4  detect    17.6 ms  "Now there's a lot of unknown unknowns as well as just known unknowns."
+10:27:24  universal-3-7-preview  turn  4  detect    50.3 ms  "Sounds good. A lot of the things will be cleared up in December when we have our first full build version of it, because now there's a lot of unknown unknowns as well as just known unknowns. And yeah, we could revisit it as soon as basically we're ready for teaser."
+10:27:25  universal-3-6-pro      turn  5  detect   262.0 ms  "And yeah, we could revisit it as soon as basically we're ready for teaser."
+10:27:31  universal-3-7-preview  turn  5  detect    43.4 ms  "Well, at least we got the name locked in, so I don't have to worry about that one for a while."
+10:27:31  universal-3-6-pro      turn  6  detect   134.5 ms  "Well, at least we got the name locked in, so I don't have to worry about that one for a while."
+10:27:41  universal-3-6-pro      turn  7  detect   122.3 ms  "Okay. Did we figure out pricing with the product experience team on— I'm assuming that was for dashboard."
+10:27:42  universal-3-7-preview  turn  6  detect   987.7 ms  "Okay. Did we figure out pricing with the product experience team on— I'm assuming that was for dashboard."
+10:27:44  universal-3-7-preview  turn  7  detect    42.2 ms  "And billing."
+10:27:44  universal-3-6-pro      turn  8  detect   126.0 ms  "And billing."
+10:27:48  universal-3-7-preview  turn  8  detect    29.0 ms  "I don't see MP on here, so we might not have an answer."
+10:27:48  universal-3-6-pro      turn  9  detect   424.1 ms  "I don't see MP on here, so we might not have an answer."
+10:27:49  universal-3-7-preview  turn  9  detect    24.9 ms  "But Ben, you might know."
+10:27:50  universal-3-6-pro      turn 10  detect   220.7 ms  "But Ben, you might know."
+10:27:53  universal-3-7-preview  turn 10  detect   899.1 ms  "Um, no, I"
+10:27:53  universal-3-6-pro      turn 11  detect    88.5 ms  "No, I—"
+10:27:58  universal-3-7-preview  turn 11  detect   887.4 ms  "Sorry, is this— this— we are matching"
+10:27:58  universal-3-6-pro      turn 12  detect    13.8 ms  "sorry, is this— this— we are matching"
+10:28:07  universal-3-6-pro      turn 13  detect   125.1 ms  "pricing. 3.7 pricing is $0.30 and the agent is matched at $0.45."
+10:28:08  universal-3-7-preview  turn 12  detect 1,133.1 ms  "pricing. 3.7 pricing is $0.30 and the agent is matched at $0.45."
+10:28:19  universal-3-7-preview  turn 13  detect   202.8 ms  "Right. And the products team already have that information so they can get everything set up that they need to do in the dashboard. Okay. Yep. Billing and analytics will be sorted by end of week."
+10:28:19  universal-3-6-pro      turn 14  detect   351.6 ms  "Right. And the products team already have that information so they can get everything set up that they need to do in the dashboard. Okay. Yep. Billing and analytics will be sorted by end of week."
+10:28:31  universal-3-7-preview  turn 14  detect   328.3 ms  "Cool. All right. Can I jump in? And maybe this is more of a side conversation for Mary Pat, but it seems like we always do the same pricing for these models."
+10:28:36  universal-3-7-preview  turn 15  detect    30.2 ms  "And every time we release a new model, we add a new line in our pricing."
+10:28:36  universal-3-6-pro      turn 15  detect   116.0 ms  "Cool. All right. Can I jump in? And maybe this is more of a side conversation for Mary Pat, but it seems like we always do the same pricing for these models. And every time we release a new model, we add a new line in our pricing."
+10:29:09  universal-3-7-preview  turn 16  detect   220.2 ms  "If we're just going to always price the 3-point-whatever family the same, I wonder if we could just have a flat price plan for that. Because again, right now when we make rate changes, if we want to change these rates, we end up changing like 4 different— actually, 4 is not even right because we have to change the EU, we have to change the US endpoint. It's just a lot of work right now to do these changes when essentially they're always the same. But we have to change 3, 3.5, 3.6, now 3.7."
+10:29:36  universal-3-6-pro      turn 16  detect   415.1 ms  "If we're just going to always price the 3-point whatever family the same, I wonder if we could just have a flat price plan for that. Because again, right now when we make rate changes, if we want to change these rates We end up changing like 4 different— actually, 4 is not even right because we have to change the EU, we have to change the US endpoint. It's just a lot of work right now to do these changes. When essentially they're always the same, but we have to change 3, 3.5, 3.6, now 3.7. I just feel like We add them as different lines because we have the freedom to change them, but realistically it seems like we never do, so it seems like an overcomplication. I, I guess I was I want to maybe understand more or push back there. Like, if we're offering a discount after this launches, we should probably only offer discounting on 3.7. Like, I really don't think we should go back and incentivize"
+10:29:41  universal-3-7-preview  turn 17  detect   613.9 ms  "I just feel like we add them as different lines because we have the freedom to change them. But realistically, it seems like we never do. So it seems like an overcomplication. I guess I want to maybe understand more or push back there, like if we're offering a discount after this launches, we should probably only offer discounting on 3.7. Like, I really don't think we should go back and incentivize people to use our older model. Generally we do, but"
+10:30:04  universal-3-7-preview  turn 18  detect   207.8 ms  "sometimes sales does what sales does, which is offer many things, you know, because sometimes they'll be on an old model and they'll want to switch to the new model, but they'll be like, until then, can we get the old price? But no, to your point, generally we do try to use it as a lever of you want a discount, great, switch to this new model, press to be on the new model. That way it is an incentive, but there are some exceptions."
+10:30:05  universal-3-6-pro      turn 17  detect   136.6 ms  "people to use our older models. Generally we do, but sometimes sales does what sales does, which is offer many things, you know, because sometimes they'll be on an old model model and they'll want to switch to the new model, but they'll be like, until then, can we get the old price? But no, to your point, generally we do try to use it as a lever of you want a discount, great, switch to this new model, press to be on the new model. That way it is an incentive, but there are some exceptions."
+10:30:15  universal-3-7-preview  turn 19  detect   179.2 ms  "But again, we can maybe take that offline. It just, it just keeps getting more and more complicated every time we release a model. It's just a new line in the price plan."
+10:30:15  universal-3-6-pro      turn 18  detect   237.5 ms  "But again, we can maybe take that offline. It just, it just keeps getting more and more complicated every time we release a model. It's just a new line in the price plan."
+10:30:26  universal-3-7-preview  turn 20  detect   902.7 ms  "Um,"
+10:30:26  universal-3-6-pro      turn 19  detect    10.9 ms  "Um."
+10:30:32  universal-3-6-pro      turn 20  detect   212.0 ms  "Moving to text-to-speech."
+10:30:37  universal-3-7-preview  turn 21  detect    52.9 ms  "Moving to Texas Beach, um, anything in the next 30 days that we're expecting to be released for that?"
+10:30:37  universal-3-6-pro      turn 21  detect   108.4 ms  "Anything in the next 30 days that we're expecting to be released for that?"
+10:30:47  universal-3-6-pro      turn 22  detect   138.6 ms  "Yeah, we do have an update coming, but I don't think we're changing the version."
+10:30:47  universal-3-7-preview  turn 22  detect   137.0 ms  "Yeah, we do have an update coming, but I don't think we're changing, changing the version."
+10:30:49  universal-3-7-preview  turn 23  detect    23.1 ms  "Oh, okay."
+10:30:49  universal-3-6-pro      turn 23  detect   119.5 ms  "Oh, okay."
+10:30:56  universal-3-6-pro      turn 24  detect   115.8 ms  "I guess I'd be curious, Tom, if like how or if we're going to announce that or not or how that's going to work."
+10:30:57  universal-3-7-preview  turn 24  detect   246.2 ms  "I guess I'd be curious, Tom, if like how or if we're going to announce that or not or how that's going to work."
+10:31:11  universal-3-7-preview  turn 25  detect   311.2 ms  "So for these changes, I don't think we're going to do an announcement. It's going to be a silent release and the model name stays the same. It's things like adding watermark and improving prosody."
+10:31:11  universal-3-6-pro      turn 25  detect   364.1 ms  "So for these changes, I don't think we're going to do an announcement. It's going to be a silent release and the, the model name stays the same. It's things like adding watermark and improving prosody."
+10:31:17  universal-3-7-preview  turn 26  detect   144.5 ms  "It just doesn't, it doesn't seem like it should be a major, it should be an announced release."
+10:31:18  universal-3-6-pro      turn 26  detect   218.0 ms  "It just doesn't, it doesn't seem like it should be a major, it should be an announced release."
+10:31:22  universal-3-7-preview  turn 27  detect    30.5 ms  "My understanding was it came with like half a dozen new languages."
+10:31:22  universal-3-6-pro      turn 27  detect   308.6 ms  "My understanding was it came with like half a dozen new languages."
+10:31:28  universal-3-7-preview  turn 28  detect   137.5 ms  "Oh yeah, a bunch of new languages. Good point. That was the third bullet on what's included with this."
+10:31:29  universal-3-6-pro      turn 28  detect   219.5 ms  "Oh yeah, a bunch of new languages. Good point. That was the third bullet on what's included with this."
+10:31:33  universal-3-6-pro      turn 29  detect    55.2 ms  "What do you think? Do we, if we're adding a bunch of new languages,"
+10:31:33  universal-3-7-preview  turn 29  detect   962.2 ms  "What do you think? Do we, if we're adding a bunch of new languages,"
+10:31:35  universal-3-7-preview  turn 30  detect    22.0 ms  "Yeah, it seems like maybe we should announce in some way."
+10:31:36  universal-3-6-pro      turn 30  detect   101.7 ms  "yeah, it seems like maybe we should announce in some way."
+10:31:38  universal-3-7-preview  turn 31  detect    41.5 ms  "That we have all these languages."
+10:31:39  universal-3-7-preview  turn 32  detect    21.4 ms  "Added."
+10:31:39  universal-3-6-pro      turn 31  detect   109.8 ms  "That we have all these languages added."
+10:31:43  universal-3-7-preview  turn 33  detect    46.2 ms  "Yeah, we can definitely announce it, I think."
+10:31:43  universal-3-6-pro      turn 32  detect   126.5 ms  "Yeah, we can definitely announce it, I think."
+10:31:50  universal-3-7-preview  turn 34  detect    52.4 ms  "We're not going to reversion, but we'll want to just make noise about the incremental improvement, right?"
+10:31:50  universal-3-6-pro      turn 33  detect   216.4 ms  "We're not going to reversion, but we'll want to just like make noise about the incremental improvement, right?"
+10:31:51  universal-3-7-preview  turn 35  detect     7.6 ms  "Yeah."
+10:31:51  universal-3-6-pro      turn 34  detect    93.9 ms  "Yeah. Yeah."
+10:31:56  universal-3-7-preview  turn 36  detect    35.7 ms  "TTS 1 adds 6 new languages, blah blah blah. Yeah."
+10:31:57  universal-3-6-pro      turn 35  detect   321.1 ms  "TTS 1 adds 6 new languages, blah blah blah. Yeah."
+10:32:01  universal-3-7-preview  turn 37  detect    18.5 ms  "Okay, and when is that?"
+10:32:01  universal-3-6-pro      turn 36  detect    99.1 ms  "Okay. And when is that?"
+10:32:03  universal-3-7-preview  turn 38  detect    48.0 ms  "When are we anticipating that to be ready?"
+10:32:03  universal-3-6-pro      turn 37  detect   123.9 ms  "When are we anticipating that to be ready?"
+10:32:11  universal-3-7-preview  turn 39  detect    40.8 ms  "I'll check with Pasquale, but I was thinking it would be the next week."
+10:32:11  universal-3-6-pro      turn 38  detect   133.1 ms  "I'll check with Pasquale, but I was thinking it would be the next week."
+10:32:22  universal-3-7-preview  turn 40  detect   851.7 ms  "Um,"
+10:32:22  universal-3-6-pro      turn 39  detect    76.1 ms  "Um."
+10:32:33  universal-3-7-preview  turn 41  detect   925.2 ms  "I guess the question is like also, have we done the work for like picking the best voice in each of those languages so that we can update"
+10:32:33  universal-3-6-pro      turn 40  detect   156.3 ms  "I guess the question is, like, also, have we done the work for, like, picking the best voice in each of those languages so that we can update"
+10:32:35  universal-3-7-preview  turn 42  detect    45.9 ms  "demo surfaces accordingly?"
+10:32:35  universal-3-6-pro      turn 41  detect   126.2 ms  "demo surfaces accordingly?"
+10:32:47  universal-3-7-preview  turn 43  detect    53.4 ms  "Of like, because I know we've kind of historically wanted one that we thought was like the best experience for each language across each demo experience, whether it's playground or website."
+10:32:47  universal-3-6-pro      turn 42  detect   127.1 ms  "Of like, because I know we've kind of historically wanted one that we thought was like the best experience for each language across each demo experience, whether it's playground or website."
+10:32:52  universal-3-7-preview  turn 44  detect    28.0 ms  "Yep, good point. That would have to be part of releasing these new languages."
+10:32:52  universal-3-6-pro      turn 43  detect   113.0 ms  "Yep. Good point. That would have to be part of releasing these new languages."
+10:32:54  universal-3-7-preview  turn 45  detect    24.9 ms  "I haven't done that work yet."
+10:32:54  universal-3-6-pro      turn 44  detect   110.2 ms  "I haven't done that work yet."
+10:32:56  universal-3-7-preview  turn 46  detect    24.5 ms  "Okay."
+10:32:56  universal-3-6-pro      turn 45  detect   114.5 ms  "Okay."
+10:33:06  universal-3-7-preview  turn 47  detect    52.9 ms  "Yeah, maybe we can start a thread on that too so we can figure out announcement timing when that's in a good place."
+10:33:06  universal-3-6-pro      turn 46  detect   138.9 ms  "Yeah, maybe we can start a thread on that too so we can figure out announcement timing when that's in a good place."
+10:33:08  universal-3-7-preview  turn 48  detect    23.4 ms  "Sounds good."
+10:33:08  universal-3-6-pro      turn 47  detect   115.4 ms  "Sounds good."
+10:33:09  universal-3-7-preview  turn 49  detect    31.4 ms  "Cool."
+10:33:10  universal-3-6-pro      turn 48  detect   114.7 ms  "Cool."
+10:33:21  universal-3-7-preview  turn 50  detect    55.0 ms  "For LM Gateway, since MP is not here, I did chat async this morning. We have a bunch of updates that we're planning to ship out this week."
+10:33:21  universal-3-6-pro      turn 49  detect   143.7 ms  "For LM Gateway, since MP is not here, I did chat async this morning. We have a bunch of updates that we're planning to ship out this week."
+10:33:32  universal-3-7-preview  turn 51  detect    51.6 ms  "That some have been shipped in the previous weeks. We just haven't made as much noise about it. So we'll probably do some socials there."
+10:33:32  universal-3-6-pro      turn 50  detect   232.1 ms  "That some have been shipped in the previous weeks. We just haven't made as much noise about it, so we'll probably do some socials there."
+10:34:07  universal-3-6-pro      turn 51  detect   134.0 ms  "And then sync, I saw the update from Adam on the latency improvements, so planning to make some noise about that as well. Either this week or potentially Monday. Yeah, those, those updates are awesome and customers are already noticing. I think any, anyone On any of these products who express latency concerns, you should go back to them and get them re-engaged."
+10:34:08  universal-3-7-preview  turn 52  detect   164.7 ms  "And then sync, I saw the update from Adam on the latency improvements. So planning to make some noise about that as well, either this week or potentially Monday. Yeah, those updates are awesome and customers are already noticing. I think anyone on any of these products who expressed latency concerns, you should go back to them and get them re-engaged."
+10:34:27  universal-3-7-preview  turn 53  detect    10.7 ms  "Yeah, yeah, that's a good flag too for the sales team. I think most of them saw— I actually already saw some Pylon messages going out to customers mentioning it too. So, but we'll make sure that we service that to the go-to-market teams too."
+10:34:29  universal-3-6-pro      turn 52  detect   236.0 ms  "Yeah, yeah, that's a good flag too for the sales team. I think most of them saw— I actually already saw some Pylon messages going out to customers. Customer is mentioning it too. So, but we'll make sure that we service that to the go-to-market teams too."
+10:35:05  universal-3-7-preview  turn 54  detect   262.8 ms  "All right, so it sounds like major open items are figuring out self-hosted launch plan. I think there needs to be a broader discussion because I know there's some strong feelings about getting that out in December. And then also for the 3.7 launch next Tuesday, just general readiness around docs, product, all of that. And then separately benchmarking for— it was just the real-time agent model that we plan to benchmark, correct? With artificial analysis, I mean."
+10:35:05  universal-3-6-pro      turn 53  detect   348.7 ms  "All right, so it sounds like major open items are figuring out a self-hosted launch plan. I think there needs to be a broader discussion because I know there's Some strong feelings about getting that out in December. And then also for the 3.7 launch next Tuesday, just general readiness around docs, product, all of that, and then separately benchmarking for— it was just the real-time agent model that we plan to benchmark, correct? With artificial analysis, I mean."
+10:35:07  universal-3-7-preview  turn 55  detect    37.2 ms  "Yes."
+10:35:07  universal-3-6-pro      turn 54  detect   123.5 ms  "Yes."
+10:35:09  universal-3-7-preview  turn 56  detect    28.3 ms  "Yeah, yeah."
+10:35:09  universal-3-6-pro      turn 55  detect   117.3 ms  "Yeah, yeah."
+10:35:11  universal-3-7-preview  turn 57  detect    14.4 ms  "On."
+10:35:11  universal-3-6-pro      turn 56  detect   234.6 ms  "On."
+10:35:22  universal-3-6-pro      turn 57  detect   239.1 ms  "All right, busy next couple days before this, this real-time launch, but appreciate everybody's time. And if nobody else has anything, we can jump."
+10:35:22  universal-3-7-preview  turn 58  detect   259.7 ms  "All right. Busy next couple of days before this, this real-time launch. But I appreciate everybody's time. And if nobody else has anything, we can jump."
+10:35:28  universal-3-7-preview  turn 59  detect   142.5 ms  "Thank you, Madison. Thanks for herding all this process."
+10:35:28  universal-3-6-pro      turn 58  detect   206.1 ms  "Thank you, Madison. Thanks for herding all this process."
+10:35:30  universal-3-7-preview  turn 60  detect     2.3 ms  "Yeah."
+10:35:31  universal-3-7-preview  turn 61  detect    36.6 ms  "Thanks all. See ya."
+10:35:32  universal-3-6-pro      turn 59  detect   101.5 ms  "Yep, thanks all. See ya."
+  AssemblyAI no messages received for 15s session=9eb15f40-0c13-49ea-b95a-988152f1d568
+AssemblyAI no messages received for 15s session=c008fa2a-ebdb-4374-bfb9-c6025d9f68ae
+^C
+Stopping. Flushing final turns...
+
+==========================================================================
+Turn-detection latency summary
+==========================================================================
+model                  turns       mean     median        p90     min      max
+--------------------------------------------------------------------------
+universal-3-6-pro         59     172.1m     131.2m     348.7m     11m     480m
+universal-3-7-preview     61     205.4m      51.6m     887.4m      2m   1,133m
+
+--------------------------------------------------------------------------
+Per turn: universal-3-6-pro  vs  universal-3-7-preview  (delta = second minus first)
+--------------------------------------------------------------------------
+turn  universal-3-6-pr  universal-3-7-pr       delta   text
+   1          243.5 ms           34.2 ms   -209.3 ms   we're holding back from rel…
+   2          480.3 ms          152.5 ms   -327.8 ms   But there's also, I think, …
+   3          131.2 ms           54.2 ms    -77.0 ms   Sounds good. A lot of the t…
+   4           17.6 ms           50.3 ms     32.7 ms   Now there's a lot of unknow…
+   5          262.0 ms           43.4 ms   -218.7 ms   And yeah, we could revisit …
+   6          134.5 ms          987.7 ms    853.2 ms   Well, at least we got the n…
+   7          122.3 ms           42.2 ms    -80.1 ms   Okay. Did we figure out pri…
+   8          126.0 ms           29.0 ms    -97.0 ms   And billing.
+   9          424.1 ms           24.9 ms   -399.1 ms   I don't see MP on here, so …
+  10          220.7 ms          899.1 ms    678.4 ms   But Ben, you might know.
+  11           88.5 ms          887.4 ms    798.9 ms   No, I—
+  12           13.8 ms        1,133.1 ms  1,119.3 ms   sorry, is this— this— we ar…
+  13          125.1 ms          202.8 ms     77.7 ms   pricing. 3.7 pricing is $0.…
+  14          351.6 ms          328.3 ms    -23.4 ms   Right. And the products tea…
+  15          116.0 ms           30.2 ms    -85.8 ms   Cool. All right. Can I jump…
+  16          415.1 ms          220.2 ms   -195.0 ms   If we're just going to alwa…
+  17          136.6 ms          613.9 ms    477.2 ms   people to use our older mod…
+  18          237.5 ms          207.8 ms    -29.7 ms   But again, we can maybe tak…
+  19           10.9 ms          179.2 ms    168.3 ms   Um.
+  20          212.0 ms          902.7 ms    690.7 ms   Moving to text-to-speech.
+  21          108.4 ms           52.9 ms    -55.6 ms   Anything in the next 30 day…
+  22          138.6 ms          137.0 ms     -1.6 ms   Yeah, we do have an update …
+  23          119.5 ms           23.1 ms    -96.4 ms   Oh, okay.
+  24          115.8 ms          246.2 ms    130.4 ms   I guess I'd be curious, Tom…
+  25          364.1 ms          311.2 ms    -52.9 ms   So for these changes, I don…
+  26          218.0 ms          144.5 ms    -73.5 ms   It just doesn't, it doesn't…
+  27          308.6 ms           30.5 ms   -278.1 ms   My understanding was it cam…
+  28          219.5 ms          137.5 ms    -81.9 ms   Oh yeah, a bunch of new lan…
+  29           55.2 ms          962.2 ms    907.0 ms   What do you think? Do we, i…
+  30          101.7 ms           22.0 ms    -79.6 ms   yeah, it seems like maybe w…
+  31          109.8 ms           41.5 ms    -68.3 ms   That we have all these lang…
+  32          126.5 ms           21.4 ms   -105.1 ms   Yeah, we can definitely ann…
+  33          216.4 ms           46.2 ms   -170.3 ms   We're not going to reversio…
+  34           93.9 ms           52.4 ms    -41.5 ms   Yeah. Yeah.
+  35          321.1 ms            7.6 ms   -313.5 ms   TTS 1 adds 6 new languages,…
+  36           99.1 ms           35.7 ms    -63.4 ms   Okay. And when is that?
+  37          123.9 ms           18.5 ms   -105.4 ms   When are we anticipating th…
+  38          133.1 ms           48.0 ms    -85.1 ms   I'll check with Pasquale, b…
+  39           76.1 ms           40.8 ms    -35.4 ms   Um.
+  40          156.3 ms          851.7 ms    695.4 ms   I guess the question is, li…
+  41          126.2 ms          925.2 ms    799.0 ms   demo surfaces accordingly?
+  42          127.1 ms           45.9 ms    -81.1 ms   Of like, because I know we'…
+  43          113.0 ms           53.4 ms    -59.6 ms   Yep. Good point. That would…
+  44          110.2 ms           28.0 ms    -82.2 ms   I haven't done that work ye…
+  45          114.5 ms           24.9 ms    -89.6 ms   Okay.
+  46          138.9 ms           24.5 ms   -114.5 ms   Yeah, maybe we can start a …
+  47          115.4 ms           52.9 ms    -62.5 ms   Sounds good.
+  48          114.7 ms           23.4 ms    -91.3 ms   Cool.
+  49          143.7 ms           31.4 ms   -112.3 ms   For LM Gateway, since MP is…
+  50          232.1 ms           55.0 ms   -177.0 ms   That some have been shipped…
+  51          134.0 ms           51.6 ms    -82.4 ms   And then sync, I saw the up…
+  52          236.0 ms          164.7 ms    -71.3 ms   Yeah, yeah, that's a good f…
+  53          348.7 ms           10.7 ms   -338.0 ms   All right, so it sounds lik…
+  54          123.5 ms          262.8 ms    139.2 ms   Yes.
+  55          117.3 ms           37.2 ms    -80.1 ms   Yeah, yeah.
+  56          234.6 ms           28.3 ms   -206.3 ms   On.
+  57          239.1 ms           14.4 ms   -224.7 ms   All right, busy next couple…
+  58          206.1 ms          259.7 ms     53.6 ms   Thank you, Madison. Thanks …
+  59          101.5 ms          142.5 ms     41.0 ms   Yep, thanks all. See ya.
+--------------------------------------------------------------------------
+Mean delta +39.6 ms over 59 paired turns. On average universal-3-6-pro detects end of turn sooner.
+==========================================================================
